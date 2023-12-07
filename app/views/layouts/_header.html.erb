@@ -2,6 +2,10 @@
   <!--ユーザーサインイン時-->
   <% if user_signed_in? %>
     <ul>
+      
+      <li>
+        <%= link_to 'Bookers', root_path %>
+      </li>
 
       <li>
         <%= link_to user_path do %>
@@ -32,6 +36,10 @@
   <!--ユーザー未サインイン時-->
   <% else %>
     <ul>
+      
+      <li>
+        <%= link_to 'Bookers', root_path %>
+      </li>
 
       <li>
         <%= link_to  root_path do %>
