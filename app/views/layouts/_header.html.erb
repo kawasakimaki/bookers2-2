@@ -2,13 +2,13 @@
   <!--ユーザーサインイン時-->
   <% if user_signed_in? %>
     <ul>
-      
+
       <li>
         <%= link_to 'Bookers', root_path %>
       </li>
 
       <li>
-        <%= link_to user_path do %>
+        <%= link_to user_path(current_user) do %>
           <i class="fa-solid fa-house"></i>Home
         <% end %>
       </li>
@@ -36,7 +36,7 @@
   <!--ユーザー未サインイン時-->
   <% else %>
     <ul>
-      
+
       <li>
         <%= link_to 'Bookers', root_path %>
       </li>

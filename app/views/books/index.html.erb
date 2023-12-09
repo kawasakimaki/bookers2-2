@@ -1,3 +1,9 @@
+<!--左側-->
+<%= render 'left', book: @book %>
+
+
+<!--右側-->
+
 <h2>Books</h2>
 
 <table>
@@ -8,11 +14,12 @@
     <th>Opinion</th>
   </tr>
 
-  <% @book.each do |book| %>
+  <% @books.each do |book| %>
     <tr>
       <td></td>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
     </tr>
+  <% end %>
 
 </table>
