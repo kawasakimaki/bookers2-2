@@ -1,3 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-zzz
+<!--左側-->
+<%= render 'books/left', book: @book, user: @user %>
+
+<!--右側-->
+<h4>Books</h4>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+
+  <% @books.each do |books| %>
+    <tr>
+      <td>画像</td>
+      <td><%= link_to books.title, book_path(books.id) %></td>
+      <td><%= books.body %></td>
+    </tr>
+  <% end %>
+</table>
