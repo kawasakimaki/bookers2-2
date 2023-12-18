@@ -1,25 +1,33 @@
-<!--左側-->
-<%= render 'books/left', book: @book, user: @user %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <!--左側-->
+      <%= render 'books/left', book: @book, user: @user %>
+    </div>
 
-<!--右側-->
-<h4>Books</h4>
+    <div class="col-md-8 offset-md-1">
+      <!--右側-->
+      <h4>Books</h4>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Opinion</th>
-    </tr>
-  </thead>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @books.each do |books| %>
-      <tr>
-        <td><%= image_tag books.user.get_profile_image(100, 100) %></td>
-        <td><%= link_to books.title, book_path(books.id) %></td>
-        <td><%= books.body %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @books.each do |books| %>
+            <tr>
+              <td><%= image_tag books.user.get_profile_image(100, 100) %></td>
+              <td><%= link_to books.title, book_path(books.id) %></td>
+              <td><%= books.body %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
